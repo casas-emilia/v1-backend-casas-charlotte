@@ -44,10 +44,10 @@ func main() {
 	log.Println("Migraciones completadas exitosamente")
 
 	// Seed initial data
-	seedInitialData()
+	// seedInitialData()
 }
 
-func seedInitialData() {
+/* func seedInitialData() {
 	// Verificar si los roles necesarios ya están creados
 	for _, id := range []uint{1, 2, 3} {
 		var rol models.Rol
@@ -147,3 +147,4 @@ func seedInitialData() {
 
 	log.Println("Datos iniciales creados/verificados exitosamente")
 }
+*/
