@@ -17,27 +17,12 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -o main . && CGO_ENABLED=0 GOOS=linux go build -o migrate ./migrate/migrate.go
 
 # Final stage
-FROM alpine:latest
-
-# Add CA certificates and timezone data
-RUN apk --no-cache add ca-certificates tzdata
-
-# Set the working directory
+FROM debian:bullseye-slim
+RUN apt-get update && apt-get install -y ca-certificates tzdata && rm -rf /var/lib/apt/lists/*
 WORKDIR /root/
-
-# Copy the binaries from the builder stage
 COPY --from=builder /app/main .
 COPY --from=builder /app/migrate .
-
-# Expose port 8080
 EXPOSE 8080
-
-# Create a startup script
-RUN echo '#!/bin/sh' > start.sh && \
-    echo './migrate' >> start.sh && \
-    echo './main' >> start.sh && \
-    chmod +x start.sh
-
-# Set the startup command
 CMD ["./start.sh"]
+
 

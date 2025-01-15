@@ -21,15 +21,17 @@ func init() {
 }
 
 func main() {
-	// Configurar y correr el servidor
-	router := routers.SetupRouter() // Llamar a la función que configura las rutas
+	log.Println("Iniciando el servidor...")
+	router := routers.SetupRouter()
 
-	// Add a health check endpoint
+	// Ruta de health check
+	log.Println("Configurando ruta de health check...")
 	router.GET("/healthz", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status": "ok",
 		})
 	})
 
+	log.Println("Servidor corriendo en el puerto 8080")
 	router.Run(":8080")
 }
