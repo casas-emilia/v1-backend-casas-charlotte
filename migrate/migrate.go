@@ -1,16 +1,14 @@
 package main
 
 import (
-	"log"
 	"v1_backend_casas_charlotte/configs"
-	"v1_backend_casas_charlotte/models"
 )
 
 func init() {
 	configs.ConnectToDB()
 }
 
-func main() {
+/* func main() {
 	log.Println("Iniciando migraciones...")
 
 	err := configs.DB.AutoMigrate(
@@ -146,4 +144,4 @@ func seedInitialData() {
 	}
 
 	log.Println("Datos iniciales creados/verificados exitosamente")
-}
+} */
