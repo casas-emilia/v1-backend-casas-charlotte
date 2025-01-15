@@ -23,6 +23,12 @@ WORKDIR /root/
 COPY --from=builder /app/main .
 COPY --from=builder /app/migrate .
 EXPOSE 8080
+# Create a startup script
+RUN echo '#!/bin/sh' > start.sh && \
+    echo './migrate' >> start.sh && \
+    echo './main' >> start.sh && \
+    chmod +x start.sh
+
 CMD ["./start.sh"]
 
 
