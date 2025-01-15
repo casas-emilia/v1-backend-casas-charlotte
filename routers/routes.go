@@ -18,7 +18,7 @@ func SetupRouter() *gin.Engine {
 			"http://localhost:5173",
 			"http://192.168.0.11:3000",
 			"https://v1-backend-casas-charlotte-production.up.railway.app",
-			"https://v1-frontend-casas-charlotte-production.up.railway.app/",
+			"https://v1-frontend-casas-charlotte-production.up.railway.app",
 		}, // Dominios permitidos
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}, // Métodos HTTP permitidos
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"}, // Headers permitidos
