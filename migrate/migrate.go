@@ -1,15 +1,17 @@
 package main
 
 import (
+	"log"
 	"v1_backend_casas_charlotte/configs"
+	"v1_backend_casas_charlotte/models"
 )
 
 func init() {
 	configs.ConnectToDB()
 }
 
-/* func main() {
-	log.Println("Iniciando migraciones...")
+func main() {
+	/* log.Println("Iniciando migraciones...")
 
 	err := configs.DB.AutoMigrate(
 		&models.Caracteristica{},
@@ -39,7 +41,7 @@ func init() {
 		log.Fatalf("Error durante la migración: %v", err)
 	}
 
-	log.Println("Migraciones completadas exitosamente")
+	log.Println("Migraciones completadas exitosamente") */
 
 	// Seed initial data
 	seedInitialData()
@@ -144,4 +146,4 @@ func seedInitialData() {
 	}
 
 	log.Println("Datos iniciales creados/verificados exitosamente")
-} */
+}
