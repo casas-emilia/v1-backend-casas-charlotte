@@ -6,7 +6,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -16,12 +15,13 @@ var DB *gorm.DB
 func ConnectToDB() {
 	var err error
 
-	// Cargar las variables de entorno desde el archivo .env
-	err = godotenv.Load()
+	// Cargar las variables de entorno desde el archivo .env DESARROLLO!
+	// import { "github.com/joho/godotenv" }
+	/* err = godotenv.Load()
 	if err != nil {
 		log.Fatal("Error al cargar el archivo .env")
 	}
-
+	*/
 	// Obtener las variables de entorno para la base de datos
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")
