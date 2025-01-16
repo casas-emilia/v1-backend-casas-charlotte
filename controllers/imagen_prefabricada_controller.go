@@ -78,7 +78,7 @@ func CrearImagen_prefabricada(c *gin.Context) {
 	// Mostrar/enviar mensaje exitoso y response
 	c.JSON(http.StatusCreated, gin.H{
 		"message": "Imagen guardada con éxito",
-		"imagen":  imagen_prefabricadaResponse,
+		"Imagen":  imagen_prefabricadaResponse,
 	})
 }
 
