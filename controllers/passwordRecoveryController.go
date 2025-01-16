@@ -51,7 +51,7 @@ func SolicitarRecuperacion(c *gin.Context) {
 	link := "https://https://v1-frontend-casas-charlotte-production.up.railway.app/reset-password/" + token
 	go utils.EnviarEmailRecuperacion(request.Email, link)
 
-	c.JSON(http.StatusOK, gin.H{"message": "Email enviado con las instrucciones"})
+	c.JSON(http.StatusOK, gin.H{"message": "Email enviado con las instrucciones. (Aparecerá en tu correo: entre 1 a 10 minutos)"})
 }
 
 // Cambiar contraseña
