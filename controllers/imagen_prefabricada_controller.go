@@ -234,8 +234,8 @@ func ActualizarImagenPrefabricada(c *gin.Context) {
 
 	// Responder/enviar un mensaje de éxito y el response de la Imagen_prefabricada
 	c.JSON(http.StatusOK, gin.H{
-		"message":             "Cambios guardados con éxito",
-		"Imagen_prefabricada": imagenesResponse,
+		"message": "Cambios guardados con éxito",
+		"Imagen":  imagenesResponse,
 	})
 
 }
